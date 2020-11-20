@@ -1,44 +1,63 @@
 import tkinter as tk
 
 
-ans = 0
-sum = 0
-sumflag = 0
-plusflag = 0
-minusflag = 0
-flag = 0
+ans = 0 #数字のボタンを押した時格納する変数
+sum = 0 #足し引きした際の合計の値を格納する変数
+ansflag = 0 #一番初めに数字のボタンを押した際、sumに格納するためのフラグ
+sumflag = 0 #足し引きボタンを押した際、計算結果を出すかどうか判定するフラグ
+calcflag = 0 #連続で足し引きボタンを押した際、何も処理をしない為のフラグ
+flag = 0 #足す計算か、引く計算をするか判定するフラグ
+
+#１を押した際の処理
 def one():
         label.set(1)
         global ans
+        global sum
         global sumflag
-        sumflag = 0
+        global ansflag
+        global calcflag
+        calcflag = 0
         ans = 1
+        #一番初めに数字のボタンを押した時は、合計に格納させる
+        if ansflag == 0:
+            sum += ans
+        ansflag = 1
     
-    
+#２を押した際の処理
 def two():
         label.set(2)
         global ans
+        global sum
         global sumflag
-        sumflag = 0
+        global ansflag
+        global calcflag
+        calcflag = 0
         ans = 2
+        #一番初めに数字のボタンを押した時は、合計に格納させる
+        if ansflag == 0:
+            sum += ans
+        ansflag = 1
     
 
+#　+ボタンを押した際の処理
 def plus():
     global sumflag
-    global sum
-    global ans
+    global calcflag
     global flag
-    label2.set(flag)
-    if sumflag == 0:
-        if flag == 1:
-            sum = sum + ans
+    global ans
+    global sum
+    #連続で押した場合は何も処理しない
+    if calcflag == 0:
+        # =ボタンと同じ処理をさせる
+        if sumflag == 1:
+            if flag == 1:
+                sum += ans
+            elif flag == 2:
+                sum -= ans
             label.set(sum)
-        elif flag == 2:
-            sum = ans - sum
-            label.set(sum)     
-    else:
-        pass
-    
+            sumflag = 0
+    calcflag = 1
+    #足す処理をさせるフラグをセットする
     flag = 1
     sumflag = 1
     
@@ -47,43 +66,51 @@ def plus():
     
 def minus():
     global sumflag
+    global calcflag
+    global flag
     global ans
     global sum
-    global flag
-    if sumflag == 0:
-        if flag == 1:
-            sum = sum + ans
-            label.set(sum) 
-        elif flag == 2:
-            sum = ans - sum
+    #連続で押した場合は何も処理しない
+    if calcflag == 0:
+        # =ボタンと同じ処理をさせる
+        if sumflag == 1:
+            if flag == 1:
+                sum += ans
+            elif flag == 2:
+                sum -= ans
             label.set(sum)
-    else:
-        pass
+            sumflag = 0
+    calcflag = 1
+    #引く処理をさせるフラグをセットする
     flag = 2
     sumflag = 1
 
         
         
-
+# =ボタンを押した際の処理
 def answer():
     global sum
     global ans
     global flag
+    global sumflag
+    #足すか引くかはflagで判定する
     if flag == 1:
-        sum = sum + ans
-        flag = 0
+        sum += ans
     elif flag == 2:
-        sum = sum - ans
-        flag = 0
+        sum -= ans
     label.set(sum)
+    sumflag = 0
 
 
+#リセットボタンを押した際の処理　合計の変数やフラグを処理化させる
 def riset():
     label.set(0)
     global sum
     global sumflag
+    global ansflag
     global flag
     flag = 0
+    ansflag = 0
     sumflag = 0
     sum = 0
 
