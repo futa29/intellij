@@ -1,0 +1,133 @@
+@charset "UTf-8";
+
+html {
+    /* フォントサイズを１００％に設定しておくことでユーザがブラウザで指定したフォントサイズが正しく反映される */
+    font-size: 100%;
+    
+}
+
+body {
+    
+    width: 100%;
+}
+
+
+img {
+    /* 画像が画面の横幅からはみ出るのを防ぐためにmaxサイズを設定 */
+    max-width: 100%;
+    
+}
+
+.wrapper {
+    
+    max-width: 100%;
+    
+}
+#recipe { 
+    display: flex;
+    margin-right: 50px;
+}
+
+#recipe img {
+    width: 50%;
+    height: 100%;
+}
+#recipe .text {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+
+#recipe .make h2 {
+    border-bottom: solid 0.5px gray;
+    margin-bottom: 3px;
+    
+}
+#recipe .make ul {
+    
+    list-style: none;
+    padding-left: 0px;
+    margin: 0 0 0 0;
+    
+    
+}
+#recipe .make .material li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: dotted 0.5px gray;
+    padding-left: 0px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+#recipe .make li {
+    /* display: flex; */
+    justify-content: space-between;
+    border-bottom: dotted 0.5px gray;
+    padding-left: 0px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+#recipe .make p {
+    
+    margin-top:  0px;
+    margin-bottom: 0px;
+}
+#recipe .make ol {
+    
+    padding-left: 24px;
+}
+@media screen and (max-width: 880px) {
+    /*-------------------------------------------
+    recipe
+    -------------------------------------------*/
+    #recipe {
+    margin-right: 15px;
+    margin-left: 10px;
+    flex-direction: column;  /* 画像とテキストを縦並びに配置します */
+    }
+    #recipe .text{
+        margin-left: 0px;
+    }
+    #recipe img {
+        width: 100%;
+        height: auto;
+    }
+}
+/* recipe */
+
+
+/* recipeindex */
+
+#recipeindex {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+#recipeindex p {
+    display: inline-block;
+    border: solid 1px gray ;
+    padding: 18px 60px 18px 60px
+}
+
+/* recipeindex */
+
+footer {
+    margin-top: 100px;
+    text-align: center;
+}
+#footer .link ul {
+    justify-content: center;
+    padding-left: 0px;
+    list-style: none;
+    display: flex;
+}
+#footer .link li {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#footer a {
+    color: black;
+}

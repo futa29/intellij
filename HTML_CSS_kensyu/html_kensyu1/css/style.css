@@ -1,0 +1,120 @@
+@charset "UTf-8";
+
+html {
+    /* フォントサイズを１００％に設定しておくことでユーザがブラウザで指定したフォントサイズが正しく反映される */
+    font-size: 100%;
+}
+
+body {
+    width: 100%;
+}
+li {
+    list-style: none;
+}
+
+img {
+    /* 画像が画面の横幅からはみ出るのを防ぐためにmaxサイズを設定 */
+    max-width: 100%;
+    
+}
+
+.logo {
+    width: 120px;
+    line-height: 1px;
+    padding-left: 10px;
+}
+/* header */
+#header{
+    display: flex;
+    /* 両端に揃える */
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#header ul {
+    display: flex;
+    
+}
+
+#header li {
+    /* 点々を消す */
+    list-style: none;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+/* header */
+
+#mainvisual img {
+    max-width: 100%;
+
+}
+/* about */
+#about .abouttext {
+    display: flex;
+    justify-content: center;
+    /* 中心に */
+    align-items: center;
+}
+
+#about h1 {
+    text-align: center;
+    text-decoration: underline 2px;
+    text-underline-offset: 0.2em;
+    
+}
+#about img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+#about .text {
+    margin-left: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    /*-------------------------------------------
+    About
+    -------------------------------------------*/
+    #about .abouttext {
+      flex-direction: column;  /* 画像とテキストを縦並びに配置します */
+    }
+    #about img {
+    margin-right: 0;
+    }
+}
+/* about */
+
+
+
+#bycycle h1{
+    text-align: center;
+    text-decoration: underline 2px;
+    text-underline-offset: 0.2em;
+}
+
+#bycycle .by {
+    display: flex;
+}
+@media screen and (max-width: 600px) {
+    /*-------------------------------------------
+    About
+    -------------------------------------------*/
+    #bycycle .by {
+      flex-direction: column;  /* 画像とテキストを縦並びに配置します */
+    }
+    #bycycle img {
+    margin-right: 0;
+    }
+}
+
+
+footer {
+    text-align: center;
+}
+
+
+.wrapper {
+    max-width: 100%;
+    
+}
