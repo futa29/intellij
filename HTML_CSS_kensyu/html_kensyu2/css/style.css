@@ -23,6 +23,7 @@ img {
     max-width: 100%;
     
 }
+/*  画像とレシピ start  */
 #recipe { 
     display: flex;
     margin-right: 50px;
@@ -43,6 +44,7 @@ img {
     margin-bottom: 3px;
     
 }
+
 #recipe .make ul {
     
     list-style: none;
@@ -68,15 +70,15 @@ img {
     margin-bottom: 5px;
 }
 
+/* １個 */
 #recipe .make p {
-    
     margin-top:  0px;
     margin-bottom: 0px;
 }
 #recipe .make ol {
-    
     padding-left: 24px;
 }
+/* レスポンシブデザイン　縦に配置する */
 @media screen and (max-width: 880px) {
     /*-------------------------------------------
     recipe
@@ -94,10 +96,10 @@ img {
         height: auto;
     }
 }
-/* recipe */
+/*  画像とレシピ finish  */
 
 
-/* recipeindex */
+/* recipeindex  レシピ一覧を見る　start*/
 
 #recipeindex {
     margin-top: 30px;
@@ -111,7 +113,7 @@ img {
     padding: 18px 60px 18px 60px
 }
 
-/* recipeindex */
+/* recipeindex  レシピ一覧を見る　finish*/
 
 footer {
     margin-top: 100px;

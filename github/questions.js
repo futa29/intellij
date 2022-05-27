@@ -62,12 +62,12 @@ function checkclickAnswer(event){
     }
 
     //カラーコードを入れる変数を用意
-   
+
     
 
     alert(message);
 
-   
+
     //色を変更　間違ったときだけ
     document.querySelector('span#correct-answer').style.color = answerColorCode;
     //答えを表示
